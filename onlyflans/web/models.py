@@ -16,5 +16,12 @@ class FlanAdmin(admin.ModelAdmin):
     #readonly_fields = ('flan_uuid',)  # Campos de solo lectura en la edición
     prepopulated_fields = {'slug': ('name',)}  # Genera el slug automáticamente a partir del 'name' 
 
+class ContactForm(models.Model) :
+    contact_form_uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    customer_email = models.EmailField()
+    customer_name = models.CharField(max_length=64)
+    message = models.TextField()
+
+
 # Registro del modelo en el panel de administración
 admin.site.register(Flan, FlanAdmin)

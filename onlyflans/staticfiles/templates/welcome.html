@@ -1,8 +1,25 @@
 {% extends 'base.html' %} {% block contenido %}
 <main>
-  <h2>Bienvenidos</h2>
-
+  <h2>Productos exclusivos para usuarios registrados</h2>
   <section class="welcome">
+    <section class="productos">
+      <div class="card-group d-flex flex-wrap">
+        {% for flan in flanes %}
+        <div class="card" style="width: 18rem">
+          <img
+            src="{{ flan.image_url }}"
+            class="card-img-top"
+            alt="{{ flan.name }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ flan.name }}</h5>
+            <p class="card-text">{{ flan.description }}</p>
+            <a href="#" class="btn btn-primary">Agregar al carro</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
     <p id="mensaje-bienvenida"></p>
 
     <p>

@@ -70,9 +70,16 @@ main img {
 
 .card-img-top {
   object-fit: cover; /* Mantiene la proporción y cubre el contenedor */
-  height: 200px; /* Establece la altura máxima */
+  height: 200px;
+}
+.card {
+  min-width: 15rem;
+  max-width: 15rem;
 }
 
+.card-body {
+  padding: 1.25rem;
+}
 /* @media (max-width: 768px) {
   .card-group .card {
     flex: 1 0 50%; 
