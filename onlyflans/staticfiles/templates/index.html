@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% load static %} {%block contenido %}
+
+<h2>Nuestros Productos</h2>
+
+<section class="productos">
+  <div class="card-group d-flex flex-wrap">
+    {% for flan in flanes %}
+    <div class="card" style="width: 28rem">
+      <img
+        src="{{ flan.image_url }}"
+        class="card-img-top"
+        alt="{{ flan.name }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ flan.name }}</h5>
+        <p class="card-text">{{ flan.description }}</p>
+        <a href="#" class="btn btn-primary">Agregar al carro</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

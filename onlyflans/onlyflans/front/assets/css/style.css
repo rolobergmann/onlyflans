@@ -1,0 +1,94 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  padding: 20px 0;
+}
+
+header img {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #000000;
+  padding: 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ddd;
+}
+
+main {
+  padding: 20px 0;
+}
+
+main h1 {
+  font-size: 24px;
+}
+
+main p {
+  font-size: 16px;
+}
+
+main img {
+  width: 100%;
+}
+
+.card-group .card {
+  margin-bottom: 1.5rem; /* Usa la clase my-4 de Bootstrap */
+  margin-right: 0.75rem; /* Usa la clase mr-3 de Bootstrap */
+}
+
+/* .card-group {
+  display: flex;
+  flex-wrap: wrap; /
+  justify-content: space-around; 
+} */
+
+.card-img-top {
+  object-fit: cover; /* Mantiene la proporción y cubre el contenedor */
+  height: 200px;
+}
+.card {
+  min-width: 15rem;
+  max-width: 15rem;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+/* @media (max-width: 768px) {
+  .card-group .card {
+    flex: 1 0 50%; 
+  }
+}
+
+@media (max-width: 576px) {
+  .card-group .card {
+    flex: 1 0 100%;
+  }
+}
+ */

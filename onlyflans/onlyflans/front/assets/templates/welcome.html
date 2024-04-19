@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block contenido %}
+<main>
+  <h2>Productos exclusivos para usuarios registrados</h2>
+  <section class="welcome">
+    <section class="productos">
+      <div class="card-group d-flex flex-wrap">
+        {% for flan in flanes %}
+        <div class="card" style="width: 18rem">
+          <img
+            src="{{ flan.image_url }}"
+            class="card-img-top"
+            alt="{{ flan.name }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ flan.name }}</h5>
+            <p class="card-text">{{ flan.description }}</p>
+            <a href="#" class="btn btn-primary">Agregar al carro</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <p id="mensaje-bienvenida"></p>
+
+    <p>
+      OnlyFlans es una empresa familiar dedicada a la elaboración de flans
+      artesanales con ingredientes frescos y de alta calidad. Nuestra pasión por
+      los postres nos motiva a crear productos deliciosos y únicos que deleiten
+      a nuestros clientes.
+    </p>
+
+    <p>
+      Utilizamos recetas tradicionales que se han transmitido de generación en
+      generación, combinándolas con técnicas innovadoras para ofrecer una
+      experiencia culinaria memorable. Nos preocupamos por la calidad de
+      nuestros ingredientes y por el cuidado en la elaboración de cada flan,
+      para que cada bocado sea una explosión de sabor.
+    </p>
+
+    <p>
+      Además de nuestros flans clásicos, ofrecemos una variedad de opciones para
+      satisfacer todos los gustos, como sabores veganos, sin gluten y opciones
+      personalizadas. También contamos con tartas de flan, mini flans y kits
+      para que puedas preparar tus propios flans en casa.
+    </p>
+  </section>
+</main>
+{% endblock %}
