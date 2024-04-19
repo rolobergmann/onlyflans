@@ -1,8 +1,8 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import Template, Context, loader
-from web.models import Flan
-from web.forms import ContactFormForm
+from web.models import Flan, ContactForm
+from web.forms import ContactFormModelForm
 
 import os
 def index(request):
@@ -14,20 +14,23 @@ def index(request):
 def contacto(request) :
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = ContactFormForm(request.POST)
+        form = ContactFormModelForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
             # process the data in form. cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/')
+            contact_form = ContactForm.objects.create(**form.cleaned_data)
+            return HttpResponseRedirect('/exito')
 
         # if a GET (or any other method) we'll create a blank form
     else:
-        form = ContactFormForm()
+        form = ContactFormModelForm()
 
     return render(request, 'contactus.html', {'form': form})
 
+def exito(request):
+    return render(request, "exito.html")
 def about(request):
     return render(request, "about.html")
 def welcome(request):
