@@ -118,3 +118,7 @@ main img {
   align-items: center;
   justify-content: center;
 }
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}

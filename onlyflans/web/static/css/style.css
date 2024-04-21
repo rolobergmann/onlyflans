@@ -12,3 +12,7 @@ footer {
   color: #fff;
   padding: 20px 0;
 }
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}
