@@ -41,6 +41,20 @@
           Buscar
         </button>
       </form>
+      <form class="justify-content-start">
+        {% if request.user.is_authenticated %} {{user.username | upper}}
+        <a class="btn btn-primary" href="{% url 'logout' %}" role="button">
+          Logout
+        </a>
+        {% else %}
+        <a class="btn btn-primary" href="{% url 'login' %}" role="button"
+          >Login</a
+        >
+        <a class="btn btn-primary" href="{% url 'register' %}" role="button"
+          >Registrarse</a
+        >
+        {% endif%}
+      </form>
     </div>
   </nav>
 </div>

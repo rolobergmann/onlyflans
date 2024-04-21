@@ -128,3 +128,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # Revisa que tu proyecto ten
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'

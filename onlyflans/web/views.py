@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.template import Template, Context, loader
 from web.models import Flan, ContactForm
 from web.forms import ContactFormModelForm
+from django.contrib.auth.decorators import login_required
 
 import os
 def index(request):
@@ -33,6 +34,8 @@ def exito(request):
     return render(request, "exito.html")
 def about(request):
     return render(request, "about.html")
+
+@login_required
 def welcome(request):
     flanes_privados = Flan.objects.filter(is_private=True)
     context = {'flanes': flanes_privados}
