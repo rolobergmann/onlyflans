@@ -4,7 +4,8 @@
 
 <div align='center'>
 
-<p>User: boss Passwd: boss</p>
+<p>Admin: boss Passwd: boss</p>
+<p>user: jondoe Passwd: onlyflans</p>
 
 <h4> <span> · </span> <a href="https://github.com/rolobergmann/Onlyflans/blob/master/README.md"> Documentation </a> <span> · </span> <a href="https://github.com/rolobergmann/Onlyflans/issues"> Report Bug </a> <span> · </span> <a href="https://github.com/rolobergmann/Onlyflans/issues"> Request Feature </a> </h4>
 
