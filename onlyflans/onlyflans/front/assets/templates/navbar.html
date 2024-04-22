@@ -32,8 +32,8 @@
       </ul>
 
       <form class="justify-content-start">
-        {% if request.user.is_authenticated %} {{user.username | upper}}
-        ({{user.email}})
+        {% if request.user.is_authenticated %}{{user.username | upper}} ({{user.email}}) 
+
         <a class="btn btn-primary" href="{% url 'logout' %}" role="button">
           Logout
         </a>
