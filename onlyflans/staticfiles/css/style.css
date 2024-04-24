@@ -15,7 +15,7 @@ header img {
 footer {
   background-color: #343a40;
   color: #fff;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 nav {
@@ -23,6 +23,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   margin: 0;
+  height: 100px;
 }
 nav ul {
   display: flex;
@@ -38,15 +39,18 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #ddd;
+  background-color: #7277c9;
+  color: #fff;
 }
 
 main {
   padding: 20px 0;
+  background-color: #f5f5f5; /* Color de fondo claro */
 }
 
 main h1 {
   font-size: 24px;
+  margin: 0 auto;
 }
 
 main p {
@@ -57,29 +61,47 @@ main img {
   width: 100%;
 }
 
-.card-group .card {
-  margin-bottom: 1.5rem; /* Usa la clase my-4 de Bootstrap */
-  margin-right: 0.75rem; /* Usa la clase mr-3 de Bootstrap */
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  justify-content: center;
 }
 
-/* .card-group {
-  display: flex;
-  flex-wrap: wrap; /
-  justify-content: space-around; 
-} */
+@media (max-width: 768px) {
+  .card-group {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
 
 .card-img-top {
   object-fit: cover; /* Mantiene la proporción y cubre el contenedor */
   height: 200px;
 }
 .card {
+  display: flex;
+  flex-direction: column;
   min-width: 15rem;
   max-width: 15rem;
 }
 
 .card-body {
-  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
+
+.card-body .btn {
+  margin-top: auto;
+  min-height: 40px;
+}
+
+.card-body .btn:hover {
+  background-color: #7277c9;
+  color: #fff;
+}
+
 /* @media (max-width: 768px) {
   .card-group .card {
     flex: 1 0 50%; 
@@ -109,7 +131,8 @@ main img {
 }
 
 .boton-exito:hover {
-  background-color: #b1b1b1;
+  background-color: #7277c9;
+  color: #fff;
 }
 
 .contenedor-exito {
@@ -117,8 +140,111 @@ main img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
-.custom-tooltip {
-  --bs-tooltip-bg: var(--bs-primary);
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25d365;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1cb14e;
+}
+
+.whatsapp-button i.fa {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+/* Estilos generales para el formulario */
+.container form {
+  margin: 20px auto; /* Margen superior e inferior */
+  padding: 20px;
+  background-color: #f5f5f5; /* Color de fondo claro */
+  border-radius: 5px; /* Bordes redondeados */
+  margin: 0 auto;
+}
+
+/* Estilos para las etiquetas de campo */
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+.container form input[type="text"],
+.container form input[type="email"],
+.container form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Estilos para los mensajes de error */
+.text-danger {
+  color: #dc3545; /* Color rojo para los errores */
+}
+
+/* Estilos para el botón de envío */
+.container form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.container form input[type="submit"]:hover {
+  background-color: #0056b3; /* Tono más oscuro al pasar el cursor */
+}
+
+.carousel {
+  height: 300px;
+  width: 500px;
+  margin: 0 auto;
+}
+.carousel-inner {
+  height: 300px;
+  width: 500px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  color: #000000;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+.container .welcome-text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+}
+
+.container .welcome-text p {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: justify;
 }

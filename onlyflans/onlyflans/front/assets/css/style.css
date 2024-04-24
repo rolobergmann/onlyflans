@@ -230,20 +230,20 @@ main img {
   color: #000000;
 }
 
-.welcome-text {
+.welcome-text, .about-text {
   font-size: 1.2rem;
   line-height: 1.5rem;
   text-align: justify;
 }
-.container .welcome-text {
+.container .welcome-text, .container .about-text {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
   padding: 1rem;
   background-color: #f5f5f5;
 }
 
-.container .welcome-text p {
+.container .welcome-text p, .container .about-text p {
   font-size: 1.2rem;
   line-height: 1.5rem;
   text-align: justify;

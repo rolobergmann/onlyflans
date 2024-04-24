@@ -1,6 +1,6 @@
-{% extends 'base.html' %} {% block contenido %}
+{% extends "base.html" %} {% block contenido %}
 <main>
-  <h2>Bienvenido {{user.username}}</h2>
+  <h2>Bienvenido {{ user.username }}</h2>
   <p>Productos exclusivos para usuarios registrados</p>
   <section class="welcome">
     <section class="productos">
@@ -10,8 +10,7 @@
           <img
             src="{{ flan.image_url }}"
             class="card-img-top"
-            alt="{{ flan.name }}"
-          />
+            alt="{{ flan.name }}" />
           <div class="card-body">
             <h5 class="card-title">{{ flan.name }}</h5>
             <p class="card-text">{{ flan.description }}</p>
@@ -46,4 +45,4 @@
     </div>
   </section>
 </main>
-{% endblock %}
+{% endblock contenido %}

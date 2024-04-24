@@ -16,32 +16,34 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/"
+          <a class="nav-link" href="{% url 'index' %}"
             >Home <span class="sr-only">(current)</span></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="welcome">Bienvenidos</a>
+          <a class="nav-link" href="{% url 'welcome' %}">Bienvenidos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about">Acerca</a>
+          <a class="nav-link" href="{% url 'about' %}">Acerca</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contacto">Contacto</a>
+          <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
         </li>
       </ul>
 
       <form class="justify-content-start">
-        {% if request.user.is_authenticated %}{{user.username | upper}}
-        ({{user.email}})
+        {% if request.user.is_authenticated %} {{ user.username | upper }}
+        ({{ user.email }})
 
         <a class="btn btn-dark" href="{% url 'logout' %}" role="button">
           Logout
         </a>
         {% else %}
         <a class="btn btn-dark" href="{% url 'login' %}" role="button">Login</a>
-        <a class="btn btn-dark" href="#" role="button">Registrarse</a>
-        {% endif%}
+        <a class="btn btn-dark" href="{% url 'registro' %}" role="button"
+          >Registrarse</a
+        >
+        {% endif %}
       </form>
     </div>
   </nav>

@@ -4,9 +4,24 @@ from django.template import Template, Context, loader
 from web.models import Flan, ContactForm
 from web.forms import ContactFormModelForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect, render
+from web.forms import UserForm
 
 import os
+
+def registro(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = UserForm()
+    return render(request, "register.html", {'form': form})
+
 def index(request):
+
     flanes_publicos = Flan.objects.filter(is_private=False)
 
     context = {'flanes': flanes_publicos}
